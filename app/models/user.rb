@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :bookings
+  has_many :workshops_as_student, through: :bookings, source: :workshops
+  has_many :workshops
+
+  has_many :bookings_as_owner, through: :workshops, source: :bookings
 end
