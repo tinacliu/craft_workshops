@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  belongs_to :workshop_id
+  belongs_to :workshop
 
-  validates :image, precence: true
+  validates :image, presence: true
 end
