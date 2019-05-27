@@ -1,8 +1,8 @@
-class Workshop < ApplicationRecord
+  class Workshop < ApplicationRecord
   LEVEL = ["Beginner", "Intermediate", "Advanced"]
   CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", "Leather", "Paper", "Wood"]
 
-  belongs_to :owner_id
+  belongs_to :owner, class_name: "User"
   has_many :photos
   has_many :bookings
   has_many :users, through: :bookings
