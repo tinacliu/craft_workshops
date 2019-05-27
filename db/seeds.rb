@@ -11,9 +11,9 @@ require 'faker'
 LEVEL = ["Beginner", "Intermediate", "Advanced"]
 CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", "Leather", "Paper", "Wood"]
 
-User.destroy_all
-Workshop.destroy_all
 Booking.destroy_all
+Workshop.destroy_all
+User.destroy_all
 
 puts 'Welcome this will add some data to your db to play...'
 
@@ -42,7 +42,7 @@ puts 'Now adding Workshop data'
     price: rand(1..500),
     capacity: rand(1..50),
     date_time: Time.now - rand(1..500),
-    owner: User.all.sample
+    owner_id: User.all.sample.id
     )
 end
 
@@ -52,7 +52,7 @@ puts 'creating bookings'
 2.times do
   Booking.create!(
     workshop: Workshop.all.sample,
-    owner: User.all.sample,
+    user: User.all.sample,
     num_guests: rand(1..50)
     )
 end
