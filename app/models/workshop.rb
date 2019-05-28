@@ -7,8 +7,8 @@
   has_many :bookings
   has_many :users, through: :bookings
 
-  validates :name, :description, :address, :price, :date_time, :capacity, presence: true
+  validates :name, :description, :address, :price, :date_time, :capacity, :duration, presence: true
   validates :category, inclusion: { in: CATEGORY }
   validates :level, inclusion: { in: LEVEL }
-  validates :capacity, :price, numericality: { only_integer: true }
+  validates :capacity, :price, :duration, numericality: { only_integer: true }
 end

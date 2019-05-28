@@ -1,0 +1,5 @@
+class AddDurationToWorkshop < ActiveRecord::Migration[5.2]
+  def change
+    add_column :workshops, :duration, :integer
+  end
+end
