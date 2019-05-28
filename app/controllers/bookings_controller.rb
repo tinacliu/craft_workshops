@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_workshop, only: :create
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   # placeholder, this will be on workshop show page
   def new

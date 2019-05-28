@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :workshops, except: [:destroy] do
     resources :bookings, only: [:new, :create]
   end
+
+  get 'profile', to: 'users#show', as: 'profile'
+  # patch 'profile', to: 'users#update', as: 'edit_profile'
 end
