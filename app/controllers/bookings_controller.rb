@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.workshop = @workshop
     @booking.user = current_user
     if @booking.save
-      redirect_to workshop_path(@workshop)
+      redirect_to profile_path
     else
       render :new
     end
