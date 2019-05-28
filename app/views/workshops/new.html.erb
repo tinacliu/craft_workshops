@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-8 my-5">
+
+            <h2>Add your class</h2>
+
+            <%= simple_form_for [@workshop] do |f| %>
+              <%= f.input :name, label: "Class title" %>
+              <%= f.hint 'ex: An introduction to wood turning' %>
+              <%= f.input :description, label: "add a description" %>
+              <%= f.input :category, label: "Choose a category from the list", collection: Workshop::CATEGORY %>
+              <%= f.input :level, label: "Choose a difficulty level", collection: Workshop::LEVEL, selected: 'Beginner' %>
+              <%= f.input :address %>
+              <%= f.input :price, label: "Price. Ex: 3000¥", input_html: { min: '0', step: 'any', value: 500 } %>
+              <%= f.input :capacity, label: "How many persons can fit?", input_html: { min: '0', step: 'any', value: 1 } %>
+              <%= f.input :duration, label: "Duration", collection: Workshop::DURATION, selected: 30  %>
+              <%= f.hint 'ex: Time in minutes' %>
+              <%= f.input :date_time, input_html: {value: Time.now} %>
+              <%= f.label :images %>
+              <%= f.hint 'Please add your own images:' %>
+              <%= f.simple_fields_for :photos do |photos_form| %>
+                <%= photos_form.input :image, as: :file, label: false %>
+              <% end %>
+              <%= f.submit "Submit your class", class: "btn btn-primary" %>
+            <% end %>
+    </div>
+  </div>
+</div>
