@@ -1,3 +1,21 @@
 .container-workshop {
   margin: 64px;
+  background: white;
+  width: 80%;
+  height: 100%;
+  margin:80px auto 50px auto;
+}
+
+
+.img_show {
+  height: 300px;
+  width: 450px;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  margin: 15px 25px 30px 0px;
+}
+
+.p_show {
+  width: 400px;
 }
