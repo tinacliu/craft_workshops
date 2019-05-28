@@ -1,6 +1,7 @@
-  class Workshop < ApplicationRecord
+class Workshop < ApplicationRecord
   LEVEL = ["Beginner", "Intermediate", "Advanced"]
   CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", "Leather", "Paper", "Wood"]
+  DURATION = [30, 45, 60, 120, 180, 210]
 
   belongs_to :owner, class_name: "User"
   has_many :photos
@@ -10,5 +11,6 @@
   validates :name, :description, :address, :price, :date_time, :capacity, :duration, presence: true
   validates :category, inclusion: { in: CATEGORY }
   validates :level, inclusion: { in: LEVEL }
-  validates :capacity, :price, :duration, numericality: { only_integer: true }
+  validates :capacity, :price, :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  accepts_nested_attributes_for :photos
 end
