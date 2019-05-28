@@ -1,8 +1,31 @@
 <div class="container">
   <div class="row">
-      <p>this row is for filters</p>
+    <div class= "col-12">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+        <a class="nav-link active" href="#">Dates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Level</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Duration</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="row-cards">
-    <%= render 'workshops/card' %>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+       <div class="card-grid">
+        <% @workshops.each do |workshop| %>
+          <%= render 'workshops/card', workshop: workshop %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
