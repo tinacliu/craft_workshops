@@ -1,12 +1,19 @@
 require 'faker'
 
+# Some data to choose from.
 LEVEL = ["Beginner", "Intermediate", "Advanced"]
 CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", "Leather", "Paper", "Wood"]
 TITLES = ['Spoon carving for beginners', 'Green wood chair making in Suffolk', 'Don White Woodturning Experience']
+DURATION = [30, 60, 120, 180]
+BIOS = ['I have been been doing wood by miself and want to learn more.', 'Single, 9 cats, Love to craft stuff', 'Have a lot of time and want to work on crafting things', 'I love to create Jewelry and my family uses all my creations', 'I love this site is the best thing that happened to me!']
+
+# photo urls, from cloudinary
 
 PHOTOS_URLS = ['https://res.cloudinary.com/dduochwyb/image/upload/v1559013354/craftsman_ave_55db18711ba0f_xpedxm.jpg', 'https://res.cloudinary.com/dduochwyb/image/upload/v1559013355/mokuchi_woodworking_studio_54ebc348b9865_uwngg9.png',
 'https://res.cloudinary.com/dduochwyb/image/upload/v1559013354/alzerina_jewelry_5967105671bec_d5oezi.jpg', 'https://res.cloudinary.com/dduochwyb/image/upload/v1559013355/american_school_of_flower_design_57aea831259af_nbw8vv.png']
 index_counter = 0
+
+puts 'Remember to drop your table to use this seed.'
 
 puts 'Clearing data....'
 Booking.destroy_all
@@ -24,7 +31,7 @@ User.create!(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   password: 'secret',
-  bio: Faker::Lorem.paragraph,
+  bio: BIOS.sample
   )
 end
 
@@ -41,7 +48,8 @@ workshop_attributes = [
     capacity:      rand(1..50),
     date_time:     Date.today + rand(1..30),
     owner_id:      User.all.sample.id,
-    level:         LEVEL.sample
+    level:         LEVEL.sample,
+    duration:      DURATION.sample
   },
   {
     name:         'Japanese Woodworking Introduction',
@@ -52,7 +60,8 @@ workshop_attributes = [
     capacity:      rand(1..50),
     date_time:      Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
-    level:          LEVEL.sample
+    level:          LEVEL.sample,
+    duration:      DURATION.sample
   },
   {
     name:         'Jewelry Making',
@@ -64,7 +73,8 @@ workshop_attributes = [
     capacity:      rand(1..50),
     date_time:     Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
-    level:          LEVEL.sample
+    level:          LEVEL.sample,
+    duration:      DURATION.sample
   },
   {
     name:         'Floral Design Sampler',
@@ -75,12 +85,12 @@ workshop_attributes = [
     capacity:      rand(1..50),
     date_time:     Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
-    level:          LEVEL.sample
+    level:          LEVEL.sample,
+    duration:      DURATION.sample
   }
 ]
   Workshop.create!(workshop_attributes)
   workshops_arr = Workshop.all
-
 
   4.times do
   picture = Photo.new
@@ -89,7 +99,6 @@ workshop_attributes = [
   index_counter += 1
   picture.save
 end
-
 
 puts 'Workshop data added..'
 puts 'creating bookings'
@@ -103,9 +112,3 @@ puts 'creating bookings'
 end
 
 puts 'all done!'
-
-
-
-
-
-
