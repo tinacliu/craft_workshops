@@ -6,7 +6,7 @@
 
 
 .banner {
-  background-color: #68B4B6;
+  background-color: $duck-egg-blue;
   background-position: center;
   padding: 75px 0;
   font-family: $body-font;
@@ -20,7 +20,7 @@
 }
 
 .row h2 {
-  color: #3B3B3B;
+  color: $dark-gray;
   font-weight: 300;
   font-size: 25px;
   justify-content: center;
