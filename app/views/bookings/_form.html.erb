@@ -1,15 +1,17 @@
 <div class="row w-100 border p-3">
   <div class="mx-auto">
-    <div class="booking-calender"></div>
-      <h2 class = "datepicker"></h2>
-      <% simple_form_for [@workshop, @booking] do |f| -%>
+    <div class = "datepicker"></div>
+    <div class="booking-calender w-75">
+      <%= simple_form_for [@workshop, @booking] do |f| -%>
         <%= f.input :num_guests, collection: 1..6 %>
         <%= f.submit "Book Now", class: "btn btn-success btn-sm" %>
       <% end -%>
+    </div>
+
     <div class="booking-footer">
      <% spaces = @workshop.capacity %>
-     <% @workshop.bookings.each { |booking| spaces -= booking.num_guests %>
-      <p><%= spaces %> space left</p>
+     <% @workshop.bookings.each { |booking| spaces -= booking.num_guests } %>
+      <p class="my-2 text-success s_font"><%= spaces %> space left</p>
     </div>
   </div>
 </div>

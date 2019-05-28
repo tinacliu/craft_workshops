@@ -8,6 +8,7 @@ class WorkshopsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @workshop
   end
 
