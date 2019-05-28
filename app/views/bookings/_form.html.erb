@@ -1,0 +1,17 @@
+<div class="row w-100 border p-3">
+  <div class="mx-auto">
+
+    <div class="booking-calender"></div>
+
+    <% simple_form_for [@workshop, @booking] do |f| -%>
+      <%= f.input :num_guests, collection: 1..6 %>
+      <%= f.submit "Book Now", class: "btn btn-success btn-sm" %>
+    <% end -%>
+
+    <div class="booking-footer">
+     <% spaces = @workshop.capacity %>
+     <% @workshop.bookings.each { |booking| spaces -= booking.num_guests %>
+      <p><%= spaces %> space left</p>
+    </div>
+  </div>
+</div>
