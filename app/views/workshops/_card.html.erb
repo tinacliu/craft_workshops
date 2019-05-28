@@ -2,20 +2,21 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="https://66.media.tumblr.com/700de483ced4625e7e92392ccec244fa/tumblr_inline_pm1u245m3f1qeg0zi_500.jpg" alt="Card image cap">
       <div class="card-body">
-        <%= link_to 'Wood', "#", class: "card-link"%>
-        <h4 class="card-title mt-2">Small Wood Tray Making</h4>
+        <%= link_to workshop.name, "#", class: "card-link"%>
+        <h4 class="card-title mt-2"><%= truncate(workshop.description,
+                   omission: "", length: 40,  separator: " ")%></h4>
       </div>
       <div class="card-footer d-flex justify-content-around">
         <div class="card-foot-square">
-          <i class="fas fa-yen-sign"></i>
+          <i class="fas fa-yen-sign"><%= workshop.price %></i>
         </div>
         <div class="card-foot-square">|</div>
         <div class="card-foot-square">
-          <i class="fas fa-signal"></i>
+          <i class="fas fa-signal"><%= workshop.level %></i>
         </div>
         <div class="card-foot-square">|</div>
         <div class="card-foot-square">
-          <i class="far fa-clock"></i>
+          <i class="far fa-clock"><%= "60 minutes" %></i>
         </div>
 
       </div>
