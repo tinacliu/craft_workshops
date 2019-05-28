@@ -1,0 +1,9 @@
+<% @user.workshops_as_student.each do |workshop| %>
+  <div class="card-workshop-sm">
+    <div class="avatar-square"><%= workshop.date_time.strftime("%B %d") %></div>
+    <%= cl_image_tag workshop.photos.first.image, effect:"gradient_fade", class: "card-img-top shadow-sm",  width: "100%", background: "gray", y: "0.2" %>
+    <%= link_to workshop_path(workshop) do %>
+    <p class="py-2 text-secondary"><%= workshop.name %></p>
+    <% end %>
+  </div>
+<% end %>

@@ -1,7 +1,8 @@
 <div class="card border-0 text-center shadow-sm" style="width: 18rem;">
 
-  <div class="card-body px-5">
-    <h5 class="card-title my-4">
+  <div class="card-body px-5 profile-card">
+    <%= image_tag "https://avatars0.githubusercontent.com/u/48908088?s=460&v=4", alt: "alttext", class: "avatar-large profile-avatar shadow" %>
+    <h5 class="card-title mt-5 text-secondary">
       <%= "#{@user.first_name} #{@user.last_name} " %>
     </h5>
     <button type="button" class="btn btn-outline-success rounded-pill w-100">Edit Profile</button>
@@ -10,7 +11,7 @@
   <div class="card-body px-5">
     <form>
       <div class="form-group">
-        <label>Bio</label>
+        <label class="text-secondary">Bio</label>
         <textarea class="form-control" placeholder="Type your bio here"></textarea>
       </div>
       <button type="submit" class="btn btn-outline-primary rounded-pill w-100">Submit</button>

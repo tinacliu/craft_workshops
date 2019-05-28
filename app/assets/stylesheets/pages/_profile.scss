@@ -4,12 +4,33 @@
   display: flex;
   align-items: center;
   justify-content:center;
+  h5 {
+    color: $duck-egg-blue;
+    font-weight: 300;
+  }
 }
 
 
-.profile-right-row {
-  display: flex;
+.profile-right-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-content:left;
-  padding: 16px 8px;
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+  margin: 16px;
+  font-size: 13px;
+  text-align: left;
 }
+
+.profile-avatar {
+  position:absolute;
+  top: -80px;
+  left: 30%;
+}
+
+.profile-card {
+  position: relative;
+
+}
+
