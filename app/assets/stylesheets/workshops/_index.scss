@@ -1,7 +1,9 @@
 @import "show";
 
-.card-grid {
+.index-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  justify-items: center;
+  grid-gap: 24px;
+  grid-row-gap: 32px;
 }

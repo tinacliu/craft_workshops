@@ -1,27 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class= "col-12">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-        <a class="nav-link active" href="#">Dates</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Category</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Level</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Duration</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="container mt-5">
+
+<%= render 'workshops/filter_bar' %>
+
+<div class="container mt-4">
   <div class="row">
     <div class="col-12">
-       <div class="card-grid">
+       <div class="index-grid">
         <% @workshops.each do |workshop| %>
           <%= render 'workshops/card', workshop: workshop %>
         <% end %>
