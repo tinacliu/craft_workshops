@@ -13,4 +13,8 @@ class Workshop < ApplicationRecord
   validates :level, inclusion: { in: LEVEL }
   validates :capacity, :price, :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   accepts_nested_attributes_for :photos
+
+  def spaces_left
+    capacity - bookings.count
+  end
 end
