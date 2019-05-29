@@ -1,8 +1,8 @@
 <div class="row">
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://66.media.tumblr.com/700de483ced4625e7e92392ccec244fa/tumblr_inline_pm1u245m3f1qeg0zi_500.jpg" alt="Card image cap">
+      <%= cl_image_tag workshop.photos.first.image, height: 300, width: 400, crop: :fill, class: 'card-img-top' %>
       <div class="card-body">
-        <%= link_to workshop.name, "#", class: "card-link"%>
+        <%= link_to workshop.name, workshop_path(workshop), class: "card-link"%>
         <h4 class="card-title mt-2"><%= truncate(workshop.description,
                    omission: "", length: 40,  separator: " ")%></h4>
       </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="card-foot-square">|</div>
         <div class="card-foot-square">
-          <i class="far fa-clock"><%= "60 minutes" %></i>
+          <i class="far fa-clock"><%= "#{workshop.duration}/minutes" %></i>
         </div>
     </div>
   </div>
