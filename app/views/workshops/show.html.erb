@@ -1,7 +1,7 @@
   <div class="container-workshop px-5 py-5 shadow-sm">
     <div class="row bg-white py-2">
 
-      <div class="col-7 border-right">
+      <div class="col-8 border-right">
         <div>
           <h5 class="underline blue m_font"><%= @workshop.category %></h5>
           <h4 class="grey l_font"><%= @workshop.name %></h4>
@@ -41,8 +41,8 @@
           </div>
       </div>
 
-      <div class="col-5 px-5">
-        <%= render 'bookings/form', workshop: @workshop%>
+      <div class="col-4 px-5">
+        <%= render 'bookings/form' %>
       </div>
 
     </div>
