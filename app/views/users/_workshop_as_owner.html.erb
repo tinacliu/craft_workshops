@@ -1,0 +1,17 @@
+<div class="card-product my-3">
+  <% @user.workshops.each do |workshop_own| %>
+    <%= cl_image_tag workshop_own.photos.first.image, effect:"gradient_fade",  width: "100%", background: "gray", y: "0.2" %>
+
+    <div class="card-product-infos">
+      <h5><%= workshop_own.name %></h5>
+
+        <% num_attendees = 0 %>
+        <% workshop_own.bookings.each do |booking| %>
+          <% num_attendees += booking.num_guests %>
+          <p> - <%= "#{booking.user.first_name} #{booking.user.last_name} | #{booking.num_guests} guest | #{booking.user.bio}" %></p>
+          <% end %>
+        <p>Total Bookings: <%= num_attendees%> | Spaces Remaining: <%= workshop_own.capacity - num_attendees %></p>
+      <% end %>
+
+    </div>
+  </div>
