@@ -1,6 +1,6 @@
 <div class="row w-100 p-3">
   <div class="mx-auto">
-    <div class = "datepicker"></div>
+    <div class = "datepicker" data-default-date= <%= workshop.date_time %> data-min-date= <%= workshop.date_time %> data-max-date=<%= workshop.date_time %>  ></div>
     <div class="booking-calender w-75">
       <%= simple_form_for [@workshop, @booking] do |f| -%>
         <%= f.input :num_guests, :label => "Number of Attendee", collection: 1..6, label_html: { class: 'mt-5 blue m_font underline' } %>
