@@ -6,8 +6,13 @@
 
 
 .banner {
-  background-color: $duck-egg-blue;
+  // background-color: $duck-egg-blue;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),asset_url('banner2.jpg');
+  // background-image: asset_url('banner1.jpg');
   background-position: center;
+  background-size: cover;
+  background-position: center;
+
   padding: 75px 0;
   font-family: $body-font;
   justify-content: center;
@@ -15,7 +20,7 @@
 }
 
 .row-mr {
-  margin: 20px;
+  margin: 20px
 
 }
 

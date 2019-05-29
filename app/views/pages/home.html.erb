@@ -3,15 +3,18 @@
   <div class="flex-container">
 
     <div class="row row-mr">
-      <h2>I know how to | <span class="underline grey">Carve Wood</span></h2>
+      <h2>I want to | <span class="underline blue">Make Ceramics</span></h2>
     </div>
 
     <div class="row row-mr">
+
+      <%= link_to workshops_path do %>
       <input class="btn-banner" type="search", placeholder="   Find a workshop near you">
+      <% end %>
     </div>
 
     <div class="row row-mr">
-      <h4>With <span class="underline">CRAFTS</span> Discover new skills to learn</h2>
+      <h4>With <span class="underline bold">CRAFTS</span> Discover new skills to learn</h2>
     </div>
 
   </div>
@@ -20,14 +23,36 @@
 
 <div class="container">
  <div class="row flex-container row-mr ">
-    <h2>Find you a new <span class="underline blue">Hobby</span></h2>
+    <h2>Find you a new <span class="underline blue bold"><%= link_to 'Hobby', workshops_path %></span></h2>
   </div>
 </div>
 
 <div class="card borderless">
   <div class="card-container">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'glass.jpg' %>)">
-      Glass
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'jewlery4.jpg' %>)">
+      Jewelry
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'floristry3.jpg' %>)">
+      Floristry
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'ceramic.jpg' %>)">
+      Ceramics
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'leather.jpg' %>)">
+      Leather
+    </div>
+  </div>
+
+  <div class="card-container mb-5">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'calligraphy.jpg' %>)">
+      Calligraphy
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'woodwork.jpg' %>)">
+      Wood Crafting
     </div>
 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'pottery.jpg' %>)">
@@ -36,9 +61,6 @@
 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'sewing.jpg' %>)">
       Sewing | Knitting
-    </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'woodwork.jpg' %>)">
-      Wood Crafting
     </div>
   </div>
 </div>
