@@ -32,3 +32,46 @@
 .card-workshop-sm {
   position: relative;
 }
+
+.card-workshop-sm-gray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-gray;
+  height: 125px;
+  // border: 1px solid rgba(200, 200, 200, 0.2)
+}
+
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+}
+
+.card-product h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 13px;
+  line-height: 1.2;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}

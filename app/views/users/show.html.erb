@@ -4,23 +4,31 @@
     <%= render 'users/profile_card' %>
   </div>
 
-  <div class="col-xs-12 col-md-8 bg-white shadow-sm">
+  <div class="col-xs-12 col-md-8 bg-white shadow-sm px-4">
     <div class="row align-items-center">
-    <h5 class="mt-4 px-2 pl-4 ">Upcoming <span class="underline"></span>Classes </h5>
+      <h5 class="mt-4 px-2 pl-4 ">Upcoming <span class="underline"></span>Classes </h5>
       <%= link_to workshops_path do %>
-      <i class="fas fa-plus-circle blue mt-4 "></i>
+        <i class="fas fa-plus-circle blue mt-4 "></i>
       <% end %>
     </div>
     <div class="profile-right-grid">
       <%= render 'users/workshop_booking_card' %>
     </div>
-
     <hr>
 
     <h6 class="text-muted mt-4 pl-2">Past Classes </h6>
     <div class="profile-right-grid">
+      <% if @user.workshops_as_student.where("date_time<?", Date.today).size == 0 %>
+      <div class="card-workshop-sm-gray border text-muted mb-3">none found</div>
+      <% end %>
+    </div>
 
+    <hr>
+
+    <div class="">
+      <%= render 'users/workshop_as_owner' %>
     </div>
 
   </div>
 </div>
+
