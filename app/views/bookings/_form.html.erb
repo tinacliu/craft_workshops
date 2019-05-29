@@ -5,7 +5,6 @@
     <div>
       <h5 class="blue underline m_font mt-4">Start Time:</h5>
       <%= @workshop.date_time.hour %>
-      <%= "- #{@workshop.duration}/min"%>
       </%>
     </div>
       <%= simple_form_for [@workshop, @booking] do |f| -%>
