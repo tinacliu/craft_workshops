@@ -9,8 +9,7 @@ BIOS = ['I have been been doing wood by miself and want to learn more.', 'Single
 
 # photo urls, from cloudinary
 
-PHOTOS_URLS = ['https://res.cloudinary.com/dduochwyb/image/upload/v1559013354/craftsman_ave_55db18711ba0f_xpedxm.jpg', 'https://res.cloudinary.com/dduochwyb/image/upload/v1559013355/mokuchi_woodworking_studio_54ebc348b9865_uwngg9.png',
-'https://res.cloudinary.com/dduochwyb/image/upload/v1559013354/alzerina_jewelry_5967105671bec_d5oezi.jpg', 'https://res.cloudinary.com/dduochwyb/image/upload/v1559013355/american_school_of_flower_design_57aea831259af_nbw8vv.png']
+PHOTOS_URLS = ['https://images.unsplash.com/photo-1444069788560-6ae1deb4c0d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1470342495351-a5f90c5011cd%3Fixlib%3Drb-1.2.1%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26ixid%3DeyJhcHBfaWQiOjEyMDd9', 'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1506806732259-39c2d0268443%3Fixlib%3Drb-1.2.1%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26ixid%3DeyJhcHBfaWQiOjEyMDd9', 'https://slack-imgs.com/?c=1&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1531058240690-006c446962d8%3Fixlib%3Drb-1.2.1%26q%3D80%26fm%3Djpg%26crop%3Dentropy%26cs%3Dtinysrgb%26w%3D1080%26fit%3Dmax%26ixid%3DeyJhcHBfaWQiOjEyMDd9']
 index_counter = 0
 
 puts 'Remember to drop your table to use this seed.'
@@ -95,7 +94,7 @@ workshop_attributes = [
     address:       '1-chōme-7 Ariake, Koto City, Tōkyō-to',
     price:         3000,
     capacity:      rand(1..50),
-    date_time:     DateTime.new(2019,9,7,10),
+    date_time:     DateTime.new(2019,6,7,10),
     owner_id:      User.all.sample.id,
     level:         LEVEL.sample,
     duration:      120
@@ -114,7 +113,7 @@ end
 
 puts 'Creating Pitch workshop photos.......'
 
-urls = ['https://static1.squarespace.com/static/57821680d1758e9af40b5460/t/5ac67cf36d2a73c1596bcec9/1522957579283/Turning+Earth+E10?format=1000w', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac67e4e0e2e7211e5ca4f3c/1522958464330/_DSF2814.jpg?format=1500w', 'https://images.unsplash.com/photo-1556205801-a0bf81cdc90d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac684d1758d467fd1192596/1522959657588/20171225_TE_0384.jpg?format=1500w']
+urls = ['https://static1.squarespace.com/static/57821680d1758e9af40b5460/t/5ac67cf36d2a73c1596bcec9/1522957579283/Turning+Earth+E10?format=1000w', 'https://images.unsplash.com/photo-1470342495351-a5f90c5011cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1556205801-a0bf81cdc90d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac684d1758d467fd1192596/1522959657588/20171225_TE_0384.jpg?format=1500w']
 urls.each do |url|
   photo = Photo.new(workshop: workshops_arr.last)
   photo.remote_image_url = url
