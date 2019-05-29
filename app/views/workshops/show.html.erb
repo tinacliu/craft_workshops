@@ -1,10 +1,10 @@
   <div class="container-workshop px-5 py-5 shadow-sm">
     <div class="row bg-white py-2">
 
-      <div class="col-8">
+      <div class="col-7 border-right">
         <div>
-          <h5 class="underline blue"><%= @workshop.category %></h5>
-          <h4 class="grey"><%= @workshop.name %></h4>
+          <h5 class="underline blue m_font"><%= @workshop.category %></h5>
+          <h4 class="grey l_font"><%= @workshop.name %></h4>
         </div>
 
         <div class="d-flex">
@@ -34,13 +34,14 @@
 
 
           <div class= p_show>
-            <p class="mt-2 grey">
+            <h5 class="underline m_font blue">Description:</h5>
+            <p class="mt-2 grey font-weight-light">
               <%= @workshop.description %>
             </p>
           </div>
       </div>
 
-      <div class="col-4 px-5">
+      <div class="col-5 px-5">
         <%= render 'bookings/form' %>
       </div>
 
