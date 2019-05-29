@@ -113,7 +113,7 @@ end
 
 puts 'Creating Pitch workshop photos.......'
 
-urls = ['https://static1.squarespace.com/static/57821680d1758e9af40b5460/t/5ac67cf36d2a73c1596bcec9/1522957579283/Turning+Earth+E10?format=1000w', 'https://images.unsplash.com/photo-1470342495351-a5f90c5011cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://images.unsplash.com/photo-1556205801-a0bf81cdc90d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac684d1758d467fd1192596/1522959657588/20171225_TE_0384.jpg?format=1500w']
+urls = ['https://static1.squarespace.com/static/57821680d1758e9af40b5460/t/5ac67cf36d2a73c1596bcec9/1522957579283/Turning+Earth+E10?format=1000w', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac67e4e0e2e7211e5ca4f3c/1522958464330/_DSF2814.jpg?format=1500w', 'https://images.unsplash.com/photo-1556205801-a0bf81cdc90d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80', 'https://static1.squarespace.com/static/57821680d1758e9af40b5460/5ac67d626d2a73c1596bebf5/5ac684d1758d467fd1192596/1522959657588/20171225_TE_0384.jpg?format=1500w']
 urls.each do |url|
   photo = Photo.new(workshop: workshops_arr.last)
   photo.remote_image_url = url
