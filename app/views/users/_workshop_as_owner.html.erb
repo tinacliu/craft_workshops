@@ -8,31 +8,29 @@
     <%= cl_image_tag workshop_own.photos.first.image, effect:"gradient_fade", class: "card-img-top shadow-sm rounded",  width: "100%", background: "gray", y: "0.2" %>
       <h4 class="s_font underline mt-3 mb-1 green"><%= workshop_own.category %></h4>
     <h4 class="s_font grey pb-2 border-bottom"><%= workshop_own.name %></h4>
-    <% end %>
-
 <% end %>
 
   <div class="row">
-    <div class="d-flex justify-content-around card_attendee">
-      <p class="flex-grow-1"></p>
+    <!-- <div class="d-flex justify-content-between card_attendee"> -->
+      <!-- <p class="flex-grow-1"></p> -->
       <% num_attendees = 0 %>
       <% workshop_own.bookings.each do |booking| %>
         <% num_attendees += booking.num_guests %>
       <% end %>
-      <h3 class="green s_font pr-1"> <%="#{num_attendees}"%></h3>
+      <h3 class="green s_font ml-3 pr-1 "> <%="#{num_attendees}"%></h3>
       <div class="dropdown show">
-        <i class="fas fa-user green s_font pr-1 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        <i class="fas fa-user green s_font pr-2 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <% workshop_own.users.each_with_index do |user, index| %>
             <a class="dropdown-item grey s_font"><%= "#{index + 1} | #{@user.first_name} #{@user.last_name}" %></a>
           <% end %>
         </div>
       </div>
-      <h3 class="grey s_font"><%= "| #{workshop_own.capacity - num_attendees}" %> Spots left</h3>
+      <h3 class="grey s_font pr-2">| </h3>
+      <h3 class="grey s_font"><%= "#{workshop_own.capacity - num_attendees}" %> Spots left</h3>
     </div>
-  </div>
+  <!-- </div> -->
+    <% end %>
 <% end %>
-
-
 
 
