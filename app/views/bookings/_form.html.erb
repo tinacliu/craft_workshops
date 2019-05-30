@@ -7,14 +7,18 @@
       <%= @workshop.date_time.hour %>
       <%= @workshop.date_time.hour >= 12 ? "PM" : "AM" %>
     </div>
-      <%= simple_form_for [@workshop, @booking] do |f| -%>
-        <%= f.input :num_guests, :label => "Number of Attendees", collection: 1..6, label_html: { class: 'mt-2 blue m_font underline' } %>
+                        
+      <%= simple_form_for [@workshop, @booking] do |f| %>
+        <% max_left = @workshop.spaces_left <= 6 ? @workshop.spaces_left
+        : 6 %>
+        <%= f.input :num_guests, label: "Number of Attendees", collection: (1..max_left), label_html: { class: 'mt-2 blue m_font underline' } %>
         <%= f.submit "Book Now", class: "btn btn-primary btn-sm text-white" %>
       <% end -%>
     </div>
 
     <div class="booking-footer">
-      <p class="my-2 grey s_font"><%= pluralize(@workshop.spaces_left, "space") %> left</p>
+      
+      <p class="my-2 grey s_font"><%= @workshop.spaces_left == 0 ? "Sorry, This class is full" : "#{pluralize(@workshop.spaces_left, 'space')} left" %></p>
     </div>
   </div>
 </div>
