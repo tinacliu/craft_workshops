@@ -1,7 +1,7 @@
 <div class="card border-0 text-center shadow-sm" style="width: 18rem;">
 
   <div class="card-body px-5 profile-card">
-    <%= image_tag "https://avatars0.githubusercontent.com/u/48908088?s=460&v=4", alt: "alttext", class: "avatar-large profile-avatar shadow" %>
+    <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill, class: "avatar-large profile-avatar shadow" %>
     <h5 class="card-title mt-5 text-secondary">
       <%= "#{@user.first_name} #{@user.last_name} " %>
     </h5>
