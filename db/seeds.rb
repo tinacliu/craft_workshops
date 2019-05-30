@@ -127,7 +127,7 @@ puts 'creating bookings'
   Booking.create!(
     workshop: Workshop.all.sample,
     user: User.all.sample,
-    num_guests: rand(1..19)
+    num_guests: rand(1..6)
     )
 end
 
