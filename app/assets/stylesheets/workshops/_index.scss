@@ -7,3 +7,9 @@
   grid-gap: 24px;
   grid-row-gap: 32px;
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
