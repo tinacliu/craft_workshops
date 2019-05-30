@@ -1,29 +1,65 @@
-<div class="container">
-  <div class="row">
-    <div class= "col-12">
-      <div class="filter-bar border-bottom">
 
-        <div class="dropdown">
-          <div class="filter-button" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Category</div>
-          <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
-          <% Workshop::CATEGORY.each do |category| %>
-          <% href = "/workshops/category?=#{category}" %>
-            <%= link_to workshops_path(category: category, level: params[:level]) do  %>
-              <div class="dropdown-item"><%= category %></div>
-            <% end %>
-          <% end %>
-          </div>
-        </div>
+<div class="filter-bar border-bottom my-2 py-1">
 
-
-        <a class="nav-link grey" href="#">Level</a>
-
-
-        <a class="nav-link grey" href="#">Price</a>
-
-        <a class="nav-link grey" href="#">Date</a>
-
-      </ul>
+  <div class="dropdown">
+    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Category</div>
+    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+    <% Workshop::CATEGORY.each do |category| %>
+      <%= link_to workshops_path(category: category, level: params[:level], start_price: params[start_date], end_date: params[end_date]) do  %>
+        <div class="dropdown-item"><%= category %></div>
+      <% end %>
+    <% end %>
     </div>
   </div>
+
+  <div class="div">|</div>
+
+  <div class="dropdown">
+    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Level</div>
+    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+    <% Workshop::LEVEL.each do |level| %>
+      <%= link_to workshops_path(level: level, category: params[:category]) do  %>
+        <div class="dropdown-item"><%= level %></div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="div">|</div>
+
+  <div class="dropdown">
+    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Price</div>
+    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+      <form action="/workshops" method="get" class="mx-3 my-2">
+        <div class="form-group">
+          <input type="text" class="form-control" name="min_price" value="0" placeholder="Min Price">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="max_price" placeholder="Max Price">
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="div">|</div>
+
+  <div class="dropdown">
+    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Date</div>
+    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+      <form action="/workshops" method="get" class="mx-3 my-2">
+        <div class="form-group">
+          <input type="date" id="start" name="start_date" value="2019-05-31"
+       min="2019-05-31" max="2019-12-31">
+        </div>
+        <div class="form-group">
+          <input type="date" id="start" name="end_date" value="2019-06-30"
+       min="2019-05-31" max="2019-12-31">
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+      </form>
+    </div>
+  </div>
+
 </div>
+
