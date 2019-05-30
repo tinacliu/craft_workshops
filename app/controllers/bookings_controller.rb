@@ -3,19 +3,15 @@ class BookingsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:new, :create]
 
   def create
-      @booking = Booking.new(booking_params)
-      @booking.workshop = @workshop
-      @booking.user = current_user
-      if @workshop.capacity >= 1
-        if @booking.save
-          flash[:notice] = "Your booking has been confirmed"
-          redirect_to profile_path
-        else
-          flash[:alert] = "There was an error, Please try again and make sure all information is correct"
-          redirect_to workshop_path(@workshop)
-        end
-      else
-    flash[:alert] = "There are no spaces left."
+    @booking = Booking.new(booking_params)
+    @booking.workshop = @workshop
+    @booking.user = current_user
+    if @booking.save
+      flash[:notice] = "Your booking has been confirmed"
+      redirect_to profile_path
+    else
+      flash[:alert] = "There was an error, Please try again and make sure all information is correct"
+      redirect_to workshop_path(@workshop)
     end
   end
 

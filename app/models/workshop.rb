@@ -14,12 +14,14 @@ class Workshop < ApplicationRecord
   validates :capacity, :price, :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   accepts_nested_attributes_for :photos
 
-
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
   def spaces_left
-    capacity - bookings.count
+    booked_guests = 0
+    bookings.each do |guest|
+      booked_guests += guest.num_guests
+    end
+    capacity - booked_guests
   end
-
 end
