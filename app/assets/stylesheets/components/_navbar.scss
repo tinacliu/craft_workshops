@@ -1,9 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
+  // background: $duck-egg-blue;
   background: white;
   margin-top: 0px;
   line-height: 2;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,4 +13,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 30px;
+}
+
+.logo_s {
+  width: 70px;
+  padding: 2px;
 }
