@@ -1,5 +1,6 @@
 <%= render 'workshops/filter_bar' %>
-<div class="container mt-4" >
+
+<div class="container mt-2" >
   <div class="row">
     <div class="col-8">
        <div class="index-grid">
@@ -8,15 +9,19 @@
         <% end %>
       </div>
     </div>
+
     <div class="col-4" >
-      <div
-        id="map"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
+      <div class="bg-white p-3" id="map-container">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 705px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
     </div>
+
   </div>
 </div>
 

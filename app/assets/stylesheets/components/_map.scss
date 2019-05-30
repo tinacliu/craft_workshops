@@ -10,6 +10,11 @@
 
 #map {
   height: 100vh;
+  // position: sticky;
+  // top: 0;
+  }
+
+#map-container {
   position: sticky;
   top: 0;
-  }
+}
