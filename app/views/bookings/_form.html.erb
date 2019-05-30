@@ -5,8 +5,9 @@
     <div>
       <h5 class="blue underline m_font mt-4">Start Time:</h5>
       <%= @workshop.date_time.hour %>
-      </%>
+      <%= @workshop.date_time.hour >= 12 ? "PM" : "AM" %>
     </div>
+                        
       <%= simple_form_for [@workshop, @booking] do |f| %>
         <% max_left = @workshop.spaces_left <= 6 ? @workshop.spaces_left
         : 6 %>
@@ -16,7 +17,8 @@
     </div>
 
     <div class="booking-footer">
-      <p class="my-2 grey s_font"><%= @workshop.spaces_left %> <%= @workshop.spaces_left == 0 ? 'Sorry, This class is full' : ' Spaces left' %></p>
+      
+      <p class="my-2 grey s_font"><%= @workshop.spaces_left == 0 ? "Sorry, This class is full" : "#{pluralize(@workshop.spaces_left, 'space')} left" %></p>
     </div>
   </div>
 </div>

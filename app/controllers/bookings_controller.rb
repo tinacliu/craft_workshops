@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
       flash[:notice] = "Your booking has been confirmed"
       redirect_to profile_path
     else
-      flash[:alert] = "There was an error, Please try again and make sure all information is correct"
+      flash[:alert] = "Please select the number of attendees"
       redirect_to workshop_path(@workshop)
     end
   end
