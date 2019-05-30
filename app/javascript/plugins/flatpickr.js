@@ -8,3 +8,12 @@ flatpickr(".datepicker", {
   // maxDate: "2019-06-15 15:30",
 
 })
+
+flatpickr(".datepicker2", {
+   inline: true,
+   enableTime: true
+   // defaultDate:"2019-06-15 15:30",
+  // minDate: "2019-06-15 15:30",
+  // maxDate: "2019-06-15 15:30",
+
+});
