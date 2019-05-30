@@ -44,18 +44,22 @@
 
 
 .card-product {
-  overflow: hidden;
-  height: 120px;
+  // overflow: hidden;
+  position: relative;
+  height: 160px;
   background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
 }
 
 .card-product img {
   height: 100%;
-  width: 160px;
+  width: 190px;
   object-fit: cover;
+
+
+
 }
 
 .card-product h5 {
@@ -73,5 +77,18 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  // padding: 16px;
+}
+
+.card_attendee {
+  width: 120px;
+}
+
+.s_avatar {
+  width: 4px
+}
+
+.link_color {
+  color: $dark-gray;
+
 }

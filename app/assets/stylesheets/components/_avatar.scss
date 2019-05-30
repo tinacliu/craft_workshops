@@ -29,3 +29,22 @@
   line-height: 1;
   padding: 4px;
 }
+
+
+.avatar-square_g {
+  position: absolute;
+  top: 0px;
+  right:0px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+  color: white;
+  background-color: $lime-green;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 4px;
+}
