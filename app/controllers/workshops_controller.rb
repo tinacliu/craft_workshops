@@ -4,7 +4,16 @@ class WorkshopsController < ApplicationController
  # include Pundit
 
   def index
-    @workshops = policy_scope(Workshop)
+    @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil)
+
+    @markers = @workshops.map do |workshop|
+      {
+        lat: workshop.latitude,
+        lng: workshop.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { workshop: workshop })
+
+      }
+    end
   end
 
   def show
