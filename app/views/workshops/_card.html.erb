@@ -1,25 +1,25 @@
 
-    <div class="card" style="width: 18rem;">
-      <%= cl_image_tag workshop.photos.first.image, crop: :fill, class: 'card-img-top' %>
-      <div class="card-body">
+<div class="card" style="width: 20rem;">
+  <%= cl_image_tag workshop.photos.first.image, crop: :fill, class: 'card-img-top' %>
+  <div class="card-body">
 
-        <p class="card-subtitle underline blue"><%= workshop.category %></p>
-        <h6 class="card-title mt-2"><%= link_to workshop.name, workshop_path(workshop), class: "card-link grey"%></h6>
+    <p class="card-subtitle underline blue"><%= workshop.category %></p>
+    <h6 class="card-title mt-2"><%= link_to workshop.name, workshop_path(workshop), class: "card-link grey"%></h6>
 <!--         <h5 class="card-title mt-2"><%#= truncate(workshop.name,
-                   omission: "", length: 40,  separator: " ")%></h5> -->
-      </div>
-      <div class="card-footer d-flex justify-content-around s_font">
-        <div class="card-foot-square">
-          <i class="fas fa-yen-sign blue mr-2"></i><%= workshop.price %>
-        </div>
-        <div class="card-foot-square">|</div>
-        <div class="card-foot-square">
-          <i class="fas fa-bars blue mr-2"></i><%= workshop.level %>
-        </div>
-        <div class="card-foot-square">|</div>
-        <div class="card-foot-square">
-          <i class="far fa-clock blue mr-2"></i><%= "#{workshop.duration} mins" %>
-        </div>
-    </div>
+               omission: "", length: 40,  separator: " ")%></h5> -->
   </div>
+  <div class="card-footer d-flex justify-content-around s_font">
+    <div class="card-foot-square">
+      <i class="fas fa-yen-sign blue mr-2"></i><%= workshop.price %>
+    </div>
+    <div class="card-foot-square">|</div>
+    <div class="card-foot-square">
+      <i class="fas fa-bars blue mr-2"></i><%= workshop.level %>
+    </div>
+    <div class="card-foot-square">|</div>
+    <div class="card-foot-square">
+      <i class="far fa-clock blue mr-2"></i><%= "#{workshop.duration} mins" %>
+    </div>
+</div>
+</div>
 

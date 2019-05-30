@@ -4,7 +4,11 @@ class WorkshopsController < ApplicationController
  # include Pundit
 
   def index
-    @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil)
+    if params[:category].blank?
+      @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil)
+    else
+      @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil).where(category: params[:category])
+    end
 
     @markers = @workshops.map do |workshop|
       {
