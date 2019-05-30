@@ -5,16 +5,16 @@
     <div>
       <h5 class="blue underline m_font mt-4">Start Time:</h5>
       <%= @workshop.date_time.hour %>
-      </%>
+      <%= @workshop.date_time.hour >= 12 ? "PM" : "AM" %>
     </div>
       <%= simple_form_for [@workshop, @booking] do |f| -%>
-        <%= f.input :num_guests, :label => "Number of Attendee", collection: 1..6, label_html: { class: 'mt-2 blue m_font underline' } %>
+        <%= f.input :num_guests, :label => "Number of Attendees", collection: 1..6, label_html: { class: 'mt-2 blue m_font underline' } %>
         <%= f.submit "Book Now", class: "btn btn-primary btn-sm text-white" %>
       <% end -%>
     </div>
 
     <div class="booking-footer">
-      <p class="my-2 grey s_font"><%= @workshop.spaces_left %> spaces left</p>
+      <p class="my-2 grey s_font"><%= pluralize(@workshop.spaces_left, "space") %> left</p>
     </div>
   </div>
 </div>

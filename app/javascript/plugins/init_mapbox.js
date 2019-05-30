@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+  import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 
@@ -36,7 +36,7 @@ const initMapbox = () => {
       });
    fitMapToMarkers(map, markers);
    addMarkersToMap(map, markers);
-   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
+   // map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
 };
 
