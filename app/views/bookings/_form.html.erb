@@ -14,9 +14,7 @@
     </div>
 
     <div class="booking-footer">
-     <% spaces = @workshop.capacity %>
-     <% @workshop.bookings.each { |booking| spaces -= booking.num_guests } %>
-      <p class="my-2 grey s_font"><%= spaces %> space left</p>
+      <p class="my-2 grey s_font"><%= @workshop.spaces_left %> spaces left</p>
     </div>
   </div>
 </div>

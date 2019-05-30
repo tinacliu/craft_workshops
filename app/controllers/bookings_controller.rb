@@ -1,11 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_workshop, only: :create
-  skip_before_action :authenticate_user!, only: [:new, :create]
-
-  # placeholder, this will be on workshop show page
-  def new
-    @booking = Booking.new
-  end
+  # skip_before_action :authenticate_user!, only: [:new, :create]
 
   def create
     @booking = Booking.new(booking_params)
@@ -14,7 +9,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to profile_path
     else
-      render :new
+      redirect_to workshop_path(@workshop)
+      # some sort of error message here
     end
   end
 

@@ -6,21 +6,20 @@
 
 
 .banner {
-  // background-color: $duck-egg-blue;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),asset_url('banner2.jpg');
-  // background-image: asset_url('banner1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),asset_url('banner2.jpg');
   background-position: center;
   background-size: cover;
   background-position: center;
 
-  padding: 75px 0;
+  padding: 110px 0;
+  height: 500px;
   font-family: $body-font;
   justify-content: center;
 
 }
 
 .row-mr {
-  margin: 20px
+  margin: 18px
 
 }
 
@@ -32,17 +31,17 @@
   margin-top: 30px;
 }
 
-.banner h4 {
+.banner h3 {
   color: white;
   font-family:$body-font;
   font-weight: 300;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 22px;
 
 }
 
 .banner h2 {
-  font-size: 30px;
+  font-size: 32px;
   color: white;
   font-weight: 400;
   font-family:$body-font;
