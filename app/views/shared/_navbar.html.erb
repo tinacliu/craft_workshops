@@ -1,6 +1,7 @@
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "Obbis", root_path, class: "btn btn-primary btn-sm" %>
-
+      <%= link_to root_path do %>
+        <%= image_tag "obbis-b.png", class:'logo_s'%>
+      <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,7 +32,7 @@
             </li>
             <li class="nav-item my-auto">|</li>
             <li class="nav-item">
-              <%= link_to new_user_session_path, class: "nav-link" do %>
+              <%= link_to new_user_session_path, class: "nav-link $dark-gray" do %>
                 <i class="fas fa-user"></i>
               <% end %>
             </li>
