@@ -19,6 +19,13 @@ class WorkshopsController < ApplicationController
   def show
     @booking = Booking.new
     authorize @workshop
+    @markers = [
+      {
+        lat: @workshop.latitude,
+        lng: @workshop.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { workshop: @workshop })
+      }
+    ]
   end
 
   def new
