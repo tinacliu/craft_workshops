@@ -7,8 +7,10 @@
       <%= @workshop.date_time.hour %>
       </%>
     </div>
-      <%= simple_form_for [@workshop, @booking] do |f| -%>
-        <%= f.input :num_guests, :label => "Number of Attendee", collection: 1..6, label_html: { class: 'mt-2 blue m_font underline' } %>
+      <%= simple_form_for [@workshop, @booking] do |f| %>
+        <% max_left = @workshop.spaces_left <= 6 ? @workshop.spaces_left
+        : 6 %>
+        <%= f.input :num_guests, :label => "Number of Attendees", collection: (1..max_left), label_html: { class: 'mt-2 blue m_font underline' } %>
         <%= f.submit "Book Now", class: "btn btn-primary btn-sm text-white" %>
       <% end -%>
     </div>
