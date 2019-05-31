@@ -1,7 +1,7 @@
 <div class="card border-0 text-center shadow-sm" style="width: 18rem;">
 
   <div class="card-body px-5 profile-card ">
-    <%= cl_image_tag @user.photo, height: 100, width: 100, crop: :fill, class: "avatar-large profile-avatar shadow-sm border border-light" %>
+    <%= cl_image_tag @user.photo, crop: :fill, class: "avatar-large profile-avatar shadow-sm border border-light" %>
 
     <h5 class="card-title mt-5 text-secondary">
       <%= "#{@user.first_name} #{@user.last_name}" %>

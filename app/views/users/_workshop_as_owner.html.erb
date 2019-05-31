@@ -4,7 +4,6 @@
     <% if workshop_own.photos.first %>
       <div class="avatar-square_g"><%= "#{workshop_own.date_time.strftime("%B")[0..2]} #{workshop_own.date_time.strftime("%d")}" %></div>
 
-
     <%= link_to workshop_path(workshop_own) do %>
     <%= cl_image_tag workshop_own.photos.first.image, effect:"gradient_fade", class: "card-img-top shadow-sm rounded",  width: "100%", background: "gray", y: "0.2" %>
       <h4 class="s_font underline mt-3 mb-1 green"><%= workshop_own.category %></h4>

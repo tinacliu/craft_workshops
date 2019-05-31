@@ -1,0 +1,11 @@
+<% @user.workshops_as_student.where("date_time<=?", Date.today).each do |workshop| %>
+  <div class="card-workshop-sm">
+    <div class="avatar-square"><%= "#{workshop.date_time.strftime("%B")[0..2]} #{workshop.date_time.strftime("%d")[0..2]}" %></div>
+
+    <%= link_to workshop_path(workshop) do %>
+    <%= cl_image_tag workshop.photos.first.image, effect:"grayscale", class: "card-img-top shadow-sm rounded",  width: "100%", background: "gray", y: "0.2" %>
+      <h4 class="s_font underline mt-3 mb-1"><%= workshop.category %></h4>
+    <p class="text-secondary "><%= workshop.name %></p>
+    <% end %>
+  </div>
+<% end %>
