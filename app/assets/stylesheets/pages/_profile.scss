@@ -2,7 +2,7 @@
   margin: 80px;
   padding: 24px;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content:center;
   h5 {
     color: $duck-egg-blue;
@@ -31,6 +31,7 @@
 
 .profile-card {
   position: relative;
+  top:0px;
 
 }
 
