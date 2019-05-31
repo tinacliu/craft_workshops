@@ -27,6 +27,11 @@
     }
 }
 
+.none-msg {
+  font-weight: 300;
+  color: $gray;
+}
+
 #show-all {
   color: #0E0000;
 }
@@ -35,3 +40,4 @@
   text-decoration: none !important;
   color: $duck-egg-blue;
 }
+
