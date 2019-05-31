@@ -1,17 +1,19 @@
 <div class="row w-100">
-  <div class="mx-auto">
+  <div class="mx-auto mt-5">
     <div class = "datepicker" data-default-date= <%= workshop.date_time %> data-min-date= <%= workshop.date_time %> data-max-date=<%= workshop.date_time %>  ></div>
     <div class="booking-calender w-75">
     <div>
-      <h5 class="blue underline m_font mt-4">Start Time:</h5>
-      <%= @workshop.date_time.hour %>
-      <%= @workshop.date_time.hour >= 12 ? "PM" : "AM" %>
+
+      <h5 class="blue underline s_font mt-4">Start Time:</h5>
+      <h5 class="s_font"><%= @workshop.date_time.hour %>
+      <%= @workshop.date_time.hour >= 12 ? "PM" : "AM" %></h5>
     </div>
                         
       <%= simple_form_for [@workshop, @booking] do |f| %>
         <% max_left = @workshop.spaces_left <= 6 ? @workshop.spaces_left
         : 6 %>
-        <%= f.input :num_guests, label: "Number of Attendees", collection: (1..max_left), label_html: { class: 'mt-2 blue m_font underline' } %>
+        <%= f.input :num_guests, label: "Number of Attendees", collection: (1..max_left), label_html: { class: 'mt-1 blue s_font underline' } %>
+
         <%= f.submit "Book Now", class: "btn btn-primary btn-sm text-white" %>
       <% end -%>
     </div>
