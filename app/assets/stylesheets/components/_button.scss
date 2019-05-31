@@ -8,24 +8,20 @@
 }
 
 
-.btn-edit {
+.green-tab {
   color: white;
-  padding: 8px 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: $dark-gray;
-  transition: background 0.3s ease;
+  background-color: $lime-green;
 }
 
-.img-container:hover .btn-edit {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
+.nav-link.active#pills-profile-tab {
+  color: white;
+  background-color: $lime-green;
 }
 
+.nav-link.active#pills-home-tab {
+  color: white;
+}
 
+.nav-link#pills-home-tab {
+  color: $lime-green;
+}
