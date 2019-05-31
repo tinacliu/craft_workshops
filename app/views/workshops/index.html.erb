@@ -1,14 +1,37 @@
-
-<%= render 'workshops/filter_bar' %>
-
-<div class="container mt-4">
+<div class="container">
   <div class="row">
-    <div class="col-12">
-       <div class="index-grid">
-        <% @workshops.each do |workshop| %>
-          <%= render 'workshops/card', workshop: workshop %>
-        <% end %>
-      </div>
+    <div class= "col-12">
+      <%= render 'workshops/filter_bar' %>
     </div>
   </div>
 </div>
+
+<div class="container mt-2" >
+  <div class="row">
+    <div class="col-8">
+      <% if @workshops.count > 0 %>
+        <div class="index-grid">
+          <% @workshops.each do |workshop| %>
+            <%= render 'workshops/card', workshop: workshop %>
+          <% end %>
+        </div>
+      <% else %>
+        <h6 class="pl-4 none-msg"><span class="highlight-blue">Sorry, no classes found in your filter.</span></h6>
+      <% end %>
+    </div>
+
+    <div class="col-4" >
+      <div class="bg-white p-3" id="map-container">
+        <div
+          id="map"
+          style="width: 100%;
+          height: 705px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

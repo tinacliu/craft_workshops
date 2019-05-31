@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :workshops, foreign_key: "owner_id"
 
   has_many :bookings_as_owner, through: :workshops, source: :bookings
+  mount_uploader :photo, PhotoUploader
 end

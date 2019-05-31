@@ -7,10 +7,11 @@ class BookingsController < ApplicationController
     @booking.workshop = @workshop
     @booking.user = current_user
     if @booking.save
+      flash[:notice] = "Your booking has been confirmed"
       redirect_to profile_path
     else
+      flash[:alert] = "Please select the number of attendees"
       redirect_to workshop_path(@workshop)
-      # some sort of error message here
     end
   end
 

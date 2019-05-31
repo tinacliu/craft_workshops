@@ -42,9 +42,9 @@ workshop_attributes = [
     name:         'Introduction to Modern Woodworking',
     description:  'Students will make a small table suitable for use as a planter or side table. It will be constructed out of oak using half-lap joints to create a flush assembly. The style is contemporary and minimalist, so it should fit well with any existing interior design.',
     category:      CATEGORY[-1],
-    address:       '1-chōme-3-24 Meguro, Meguro City, Tōkyō-to',
+    address:       '2-chōme-3 Meguro, Meguro City, Tōkyō-to',
     price:         8500,
-    capacity:      rand(1..50),
+    capacity:      rand(6..20),
     date_time:     Date.today + rand(1..30),
     owner_id:      User.all.sample.id,
     level:         LEVEL.sample,
@@ -54,9 +54,9 @@ workshop_attributes = [
     name:         'Japanese Woodworking Introduction',
     description:  'You will gain a broad understanding of how Japanese woodworking distinguishes itself from Western approaches during this two hour talk and demonstration. The session will include an overview of traditional hand tools used in a range of work scale, from making small objects to full size timber frame building.',
     category:      CATEGORY[-1],
-    address:       '1-chōme-25-17 Nakachō, Meguro City, Tōkyō-to',
+    address:       '1-chōme-3 Meguro, Meguro City, Tōkyō-to',
     price:         3000,
-    capacity:      rand(1..50),
+    capacity:      rand(6..20),
     date_time:      Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
     level:          LEVEL.sample,
@@ -67,9 +67,9 @@ workshop_attributes = [
     description:  'Are you looking to put your creativity in to action? Then the jewelry class is definitely for you. Either if you are looking to make professional jewelry or just for a hobby then you have find the right jewelry class.
       Come and enjoy this 90-minute fabulous, in-depth Jewelry making class where you will learn how to make unique and gorgeous jewelry for everyday wear and those special nights out.',
     category:      CATEGORY[4],
-    address:       '2-chōme-9 Yaesu, Chuo City, Tōkyō-to',
+    address:       '3-chōme-15 Meguro, Meguro City, Tōkyō-to',
     price:         5000,
-    capacity:      rand(1..50),
+    capacity:      rand(6..20),
     date_time:     Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
     level:          LEVEL.sample,
@@ -79,9 +79,9 @@ workshop_attributes = [
     name:         'Floral Design Sampler',
     description:  'Join us for a great day of flower design. The Sampler course is for individuals who want to try out our school and go home with a wealth of knowledge about the world of flower designing. It’s three great projects covering American to European design.',
     category:      CATEGORY[2],
-    address:       '1-chōme-33 Higashi, Shibuya City, Tōkyō-to',
+    address:       '4-chōme-8 Shimomeguro, Meguro City, Tōkyō-to',
     price:         7300,
-    capacity:      rand(1..50),
+    capacity:      rand(6..20),
     date_time:     Date.today + rand(1..30),
     owner_id:       User.all.sample.id,
     level:          LEVEL.sample,
@@ -93,7 +93,7 @@ workshop_attributes = [
     category:      CATEGORY[5],
     address:       '1-chōme-7 Ariake, Koto City, Tōkyō-to',
     price:         3000,
-    capacity:      rand(1..50),
+    capacity:      rand(6..20),
     date_time:     DateTime.new(2019,6,7,10),
     owner_id:      User.all.sample.id,
     level:         LEVEL.sample,
@@ -127,7 +127,7 @@ puts 'creating bookings'
   Booking.create!(
     workshop: Workshop.all.sample,
     user: User.all.sample,
-    num_guests: rand(1..50)
+    num_guests: rand(1..6)
     )
 end
 

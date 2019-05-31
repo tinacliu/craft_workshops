@@ -1,15 +1,37 @@
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show, :new]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
  # include Pundit
 
   def index
-    @workshops = policy_scope(Workshop)
+    @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil)
+
+    cat_filter = params[:category].blank? ? Workshop::CATEGORY : params[:category]
+    l_filter = params[:level].blank? ? Workshop::LEVEL : params[:level]
+    min_p = params[:min_p].blank? ? 0 : params[:min_p]
+    max_p = params[:max_p].blank? ? 100_000 : params[:max_p]
+
+    sql_query = " \
+      category IN (:cat) \
+      AND level IN (:l) \
+      AND price BETWEEN :min_p AND :max_p \
+    "
+    # @workshops = @workshops.where('category IN (?) AND level IN (?)', cat_filter, l_filter)
+    @workshops = @workshops.where(sql_query, cat: cat_filter, l: l_filter, min_p: min_p, max_p: max_p)
+
+    set_markers
   end
 
   def show
     @booking = Booking.new
     authorize @workshop
+    @markers = [
+      {
+        lat: @workshop.latitude,
+        lng: @workshop.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { workshop: @workshop })
+      }
+    ]
   end
 
   def new
@@ -31,14 +53,23 @@ class WorkshopsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
   end
 
   private
+
+  def set_markers
+    @markers = @workshops.map do |workshop|
+      {
+        lat: workshop.latitude,
+        lng: workshop.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { workshop: workshop })
+
+      }
+    end
+  end
 
   def set_workshop
     @workshop = Workshop.find(params[:id])
