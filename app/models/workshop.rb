@@ -1,6 +1,6 @@
 class Workshop < ApplicationRecord
   LEVEL = ["Beginner", "Intermediate", "Advanced"]
-  CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", 'Pottery', "Leather", "Paper", "Wood"]
+  CATEGORY = ["Calligraphy", "Ceramics", "Floristry", "Glass", "Jewellery", "Leather", 'Pottery', "Paper", "Wood"]
   DURATION = [30, 45, 60, 120, 180, 210]
 
   belongs_to :owner, class_name: "User"
