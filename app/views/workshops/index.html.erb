@@ -9,7 +9,7 @@
 <div class="container mt-2" >
   <div class="row">
     <div class="col-8">
-      <% if @workshops.count > 0 %>
+      <% if @workshops.size > 0 %>
         <div class="index-grid">
           <% @workshops.each do |workshop| %>
             <%= render 'workshops/card', workshop: workshop %>
