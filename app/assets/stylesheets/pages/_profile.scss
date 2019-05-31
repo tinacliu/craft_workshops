@@ -14,7 +14,6 @@
 .profile-right-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
   justify-content:left;
   grid-column-gap: 16px;
   grid-row-gap: 8px;
@@ -23,17 +22,6 @@
   text-align: left;
 }
 
-// .profile-owner-grid {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr ;
-//   align-items: center;
-//   justify-content:left;
-//   grid-column-gap: 16px;
-//   grid-row-gap: 8px;
-//   margin: 16px;
-//   font-size: 13px;
-//   text-align: left;
-// }
 
 .profile-avatar {
   position:absolute;

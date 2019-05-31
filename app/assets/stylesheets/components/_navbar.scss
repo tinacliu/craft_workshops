@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: $duck-egg-blue;
   background: white;
   margin-top: 0px;
   line-height: 2;
@@ -18,4 +17,9 @@
 .logo_s {
   width: 70px;
   padding: 2px;
+}
+
+.nav_s_font {
+  font-size: 15px;
+  color: $dark-gray;
 }
