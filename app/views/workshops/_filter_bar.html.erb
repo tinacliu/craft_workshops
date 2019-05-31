@@ -39,6 +39,8 @@
       <form action="/workshops" method="get" class="mx-3 my-2">
         <div class="form-group">
           <input type="text" class="form-control" name="min_p" value="0" placeholder="Min Price">
+          <input type="hidden" name="category" value="<%= params[:category] %>">
+          <input type="hidden" name="level" value="<%= params[:level] %>">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" name="max_p" placeholder="Max Price">

@@ -9,11 +9,15 @@
 <div class="container mt-2" >
   <div class="row">
     <div class="col-8">
-       <div class="index-grid">
-        <% @workshops.each do |workshop| %>
-          <%= render 'workshops/card', workshop: workshop %>
-        <% end %>
-      </div>
+      <% if @workshops.count > 0 %>
+        <div class="index-grid">
+          <% @workshops.each do |workshop| %>
+            <%= render 'workshops/card', workshop: workshop %>
+          <% end %>
+        </div>
+      <% else %>
+        <h6 class="pl-4 none-msg"><span class="highlight-blue">Sorry, no classes found in your filter.</span></h6>
+      <% end %>
     </div>
 
     <div class="col-4" >
