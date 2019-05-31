@@ -1,2 +1,7 @@
-<h3><%=workshop.name %></h3>
-<p><%= workshop.address %></p>
+<div class="card" style="width: 10rem;">
+<%= cl_image_tag workshop.photos.first.image, crop: :fill, class: 'card-img-top' %>
+  <div class="card-body p-2">
+    <h6 class="blue"><%=workshop.name %></h6>
+    <p><%= workshop.address %></p>
+  </div>
+</div>
