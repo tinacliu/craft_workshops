@@ -6,6 +6,19 @@
   margin:80px auto 50px auto;
 }
 
+.owner-card {
+  flex-grow: 1;
+  text-align: center;
+  align-items:center;
+  margin: 16px 32px;
+  padding: 32px 16px;
+  // border-left: 1px solid $duck-egg-blue;
+  background-color: $light-gray;
+  max-width: 200px;
+  font-size: 13px;
+  font-weight: 300;
+
+}
 
 .img_show {
   height: 300px;
