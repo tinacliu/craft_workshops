@@ -1,74 +1,86 @@
+<div class = "row justify-content-between">
+  <div class="filter-bar border-bottom mt-3 mb-3 py-1">
 
-<div class="filter-bar border-bottom mt-3 mb-3 py-1">
-
-  <%= link_to workshops_path, id: "show-all" do %>
-    <div class="mr-3">Show All</div>
-  <% end %>
-
-  <div class="div">|</div>
-
-  <div class="dropdown">
-    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Category</div>
-    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
-    <% Workshop::CATEGORY.each do |category| %>
-      <%= link_to workshops_path(category: category, level: params[:level], min_p: params[:min_p], max_p: params[:max_p]) do  %>
-        <div class="dropdown-item"><%= category %></div>
-      <% end %>
+    <%= link_to workshops_path, id: "show-all" do %>
+      <div class="mr-3">Show All</div>
     <% end %>
-    </div>
-  </div>
 
-  <div class="div">|</div>
+    <div class="div">|</div>
 
-  <div class="dropdown">
-    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Level</div>
-    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
-    <% Workshop::LEVEL.each do |level| %>
-      <%= link_to workshops_path(level: level, category: params[:category],min_p: params[:min_p], max_p: params[:max_p]) do  %>
-        <div class="dropdown-item"><%= level %></div>
+    <div class="dropdown">
+      <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Category</div>
+      <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+      <% Workshop::CATEGORY.each do |category| %>
+        <%= link_to workshops_path(category: category, level: params[:level], min_p: params[:min_p], max_p: params[:max_p]) do  %>
+          <div class="dropdown-item"><%= category %></div>
+        <% end %>
       <% end %>
+      </div>
+    </div>
+
+    <div class="div">|</div>
+
+    <div class="dropdown">
+      <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Level</div>
+      <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+      <% Workshop::LEVEL.each do |level| %>
+        <%= link_to workshops_path(level: level, category: params[:category],min_p: params[:min_p], max_p: params[:max_p]) do  %>
+          <div class="dropdown-item"><%= level %></div>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="div">|</div>
+
+    <div class="dropdown">
+      <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Price</div>
+      <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+        <form action="/workshops" method="get" class="mx-3 my-2">
+          <div class="form-group">
+            <input type="text" class="form-control" name="min_p" value="0" placeholder="Min Price">
+            <input type="hidden" name="category" value="<%= params[:category] %>">
+            <input type="hidden" name="level" value="<%= params[:level] %>">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="max_p" placeholder="Max Price">
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="div">|</div>
+
+    <div class="dropdown">
+      <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Date</div>
+      <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
+        <form action="/workshops" method="get" class="mx-3 my-2">
+          <div class="form-group">
+            <input type="date" name="start_date" value="2019-05-31"
+         min="2019-05-31" max="2019-12-31">
+             <input type="hidden" name="category" value="<% params[:category]%>" />
+          </div>
+          <div class="form-group">
+            <input type="date" name="end_date" value="2019-06-30"
+         min="2019-05-31" max="2019-12-31">
+          </div>
+          <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= form_tag workshops_path, method: :get do %>
+      <%= text_field_tag :location,
+        params[:location],
+        class: "form-control filter-search-bar",
+
+        placeholder: "Tokyo"
+      %>
     <% end %>
-    </div>
-  </div>
-
-  <div class="div">|</div>
-
-  <div class="dropdown">
-    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Price</div>
-    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
-      <form action="/workshops" method="get" class="mx-3 my-2">
-        <div class="form-group">
-          <input type="text" class="form-control" name="min_p" value="0" placeholder="Min Price">
-          <input type="hidden" name="category" value="<%= params[:category] %>">
-          <input type="hidden" name="level" value="<%= params[:level] %>">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="max_p" placeholder="Max Price">
-        </div>
-        <button type="submit" class="btn btn-outline-primary">Search</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="div">|</div>
-
-  <div class="dropdown">
-    <div class="filter-button mx-3" id="dropdownMenuCategory" data-toggle="dropdown" aria-expanded="false">Date</div>
-    <div class="dropdown-menu border-none" aria-labelledby="dropdownMenuCategory">
-      <form action="/workshops" method="get" class="mx-3 my-2">
-        <div class="form-group">
-          <input type="date" name="start_date" value="2019-05-31"
-       min="2019-05-31" max="2019-12-31">
-           <input type="hidden" name="category" value="<% params[:category]%>" />
-        </div>
-        <div class="form-group">
-          <input type="date" name="end_date" value="2019-06-30"
-       min="2019-05-31" max="2019-12-31">
-        </div>
-        <button type="submit" class="btn btn-outline-primary">Search</button>
-      </form>
-    </div>
   </div>
 
 </div>
+
 

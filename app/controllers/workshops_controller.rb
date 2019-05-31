@@ -4,7 +4,11 @@ class WorkshopsController < ApplicationController
  # include Pundit
 
   def index
+    # binding.pry
     @workshops = policy_scope(Workshop).where.not(latitude: nil, longitude: nil)
+    # binding.pry
+    @workshops = @workshops.near(params[:location], 10) if params[:location]
+    # binding.pry
 
     cat_filter = params[:category].blank? ? Workshop::CATEGORY : params[:category]
     l_filter = params[:level].blank? ? Workshop::LEVEL : params[:level]
@@ -17,8 +21,9 @@ class WorkshopsController < ApplicationController
       AND price BETWEEN :min_p AND :max_p \
     "
     # @workshops = @workshops.where('category IN (?) AND level IN (?)', cat_filter, l_filter)
+    # binding.pry
     @workshops = @workshops.where(sql_query, cat: cat_filter, l: l_filter, min_p: min_p, max_p: max_p)
-
+    #  binding.pry
     set_markers
   end
 
