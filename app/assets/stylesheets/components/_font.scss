@@ -6,8 +6,16 @@
   font-weight: 400;
 }
 
+.thin {
+  font-weight: 300;
+}
+
 .grey {
   color: $dark-gray;
+}
+
+.green {
+  color: $lime-green;
 }
 
 .l_grey {
@@ -28,7 +36,7 @@ h2 {
 }
 
 .s_font {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .m_font {
@@ -37,6 +45,11 @@ h2 {
 
 .l_font {
   font-size: 22px;
+}
+
+
+.decoration-none {
+  text-decoration: none;
 }
 
 .highlight-blue {
