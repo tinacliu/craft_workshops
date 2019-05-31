@@ -1,21 +1,19 @@
 <div class="banner">
   <div class="flex-container">
 
-    <div class="row">
+    <div class="row row-mr">
       <h2><span class="thin">Pursue a | </span><span class="blue bold">New Passion</span></h2>
     </div>
 
+    <div class="row row-p row-mr">
+      <h3>With <span class="bold">Obbis</span> you can discover new skills to learn here in <span class="bold">Japan</span></h3>
+    </div>
     <div class="row row-mr">
 
       <%= link_to workshops_path do %>
-      <button type="button" class="btn-banner bold">Find a workshop</button>
+      <button type="button" class="btn-banner bold mt-4">Find a workshop</button>
       <!-- <input class="btn-banner" type="search", placeholder="   Find a workshop near you"> -->
       <% end %>
-    </div>
-
-
-    <div class="row row-p row-mr">
-      <h3>With <span class="blue bold">Obbis</span> you can discover new skills to learn here in <span class="blue bold">Japan</span></h3>
     </div>
 
   </div>
@@ -26,7 +24,7 @@
 
 
 <div class="container">
- <div class="row flex-container row-mr ">
+ <div class="row flex-container-link row-mr">
     <h2> <span class="thin">Find you a new | </span><span class="underline blue bold"><%= link_to 'Hobby', workshops_path %></span></h2>
   </div>
 </div>
