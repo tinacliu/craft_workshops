@@ -22,10 +22,6 @@ class WorkshopPolicy < ApplicationPolicy
       true
     end
 
-    def edit?
-      record.owner = user
-    end
-
     def update?
       record.owner = user
     end

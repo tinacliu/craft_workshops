@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-8 my-5">
+
+            <h2>Update your class</h2>
+
+            <%= simple_form_for [@workshop] do |f| %>
+              <%= f.input :name, label: "Name of class", placeholder: "e.g. Introductory Wood Working"%>
+              <%#= f.hint 'ex: An introduction to wood turning' %>
+              <%= f.input :description, label: "Class description. What's special about it?" %>
+              <%= f.input :category, label: "Category", collection: Workshop::CATEGORY %>
+              <%= f.input :level, label: "Difficulty level", collection: Workshop::LEVEL, selected: 'Beginner' %>
+              <%= f.input :address, placeholder: "123 Main Street, Room 312" %>
+              <%= f.input :price, label: "Price (in yen)", input_html: { min: '0', step: '500', value: 1000 } %>
+              <%= f.input :capacity, label: "Maximum class size:", input_html: { min: '0', step: 'any', value: 10 } %>
+              <%= f.input :duration, label: "Duration (in minutes)", collection: Workshop::DURATION, selected: 60  %>
+              <%#= f.hint 'ex: Time in minutes' %>
+              <%#= f.input :date_time, label: "When's your class?", input_html: {value: Time.now} %>
+              <%= f.input :date_time, as: :string, required: false, input_html: {class: "datepicker2"}%>
+              <%= f.label :images %>
+              <%= f.hint 'Upload more photos?' %>
+              <%= f.simple_fields_for :photos do |photos_form| %>
+                <%= photos_form.input :image, as: :file, label: false %>
+              <% end %>
+              <%= f.submit "Submit your class", class: "btn btn-primary" %>
+            <% end %>
+    </div>
+  </div>
+</div>

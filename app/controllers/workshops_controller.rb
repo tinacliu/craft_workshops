@@ -1,6 +1,6 @@
 class WorkshopsController < ApplicationController
   before_action :set_workshop, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update]
  # include Pundit
 
   def index
@@ -53,9 +53,13 @@ class WorkshopsController < ApplicationController
   end
 
   def edit
+    authorize @workshop
   end
 
   def update
+    authorize @workshop
+    @workshop.update(workshop_params)
+    redirect_to workshop_path(@workshop)
   end
 
   private
