@@ -12,3 +12,16 @@
   color: white;
   background-color: $lime-green;
 }
+
+.nav-link.active#pills-profile-tab {
+  color: white;
+  background-color: $lime-green;
+}
+
+.nav-link.active#pills-home-tab {
+  color: white;
+}
+
+.nav-link#pills-home-tab {
+  color: $lime-green;
+}

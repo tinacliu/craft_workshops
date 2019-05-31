@@ -12,7 +12,8 @@
     <%= link_to workshop_path(workshop_own) do %>
     <%= cl_image_tag workshop_own.photos.first.image, effect:"gradient_fade", class: "card-img-top shadow-sm rounded",  width: "100%", background: "gray", y: "0.2" %>
       <h4 class="s_font underline mt-3 mb-1 green"><%= workshop_own.category %></h4>
-    <h4 class="s_font text-secondary pb-1 border-bottom"><%= workshop_own.name %></h4>
+    <h4 class="s_font text-secondary pb-1"><span class="highlight-green">
+      <%= workshop_own.name %></span></h4>
 <% end %>
 
   <div class="row">
