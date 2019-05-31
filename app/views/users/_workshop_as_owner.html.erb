@@ -4,12 +4,6 @@
     <% if workshop_own.photos.first %>
       <div class="avatar-square_g"><%= "#{workshop_own.date_time.strftime("%B")[0..2]} #{workshop_own.date_time.strftime("%d")}" %></div>
 
-      <% num_attendees = 0 %>
-      <% workshop_own.bookings.each do |booking| %>
-        <% num_attendees += booking.num_guests %>
-        <p> - <%= "#{booking.user.first_name} #{booking.user.last_name} | #{booking.num_guests} guest | #{booking.user.bio}" %></p>
-        <% end %>
-
 
     <%= link_to workshop_path(workshop_own) do %>
     <%= cl_image_tag workshop_own.photos.first.image, effect:"gradient_fade", class: "card-img-top shadow-sm rounded",  width: "100%", background: "gray", y: "0.2" %>
