@@ -1,9 +1,14 @@
 .flex-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
+.flex-container-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .banner {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),asset_url('banner2.jpg');
@@ -18,26 +23,30 @@
 
 }
 
-.row-mr {
-  margin: 18px;
-  text-align: left;
 
-}
+
+// .row-mr {
+//   margin: 8px;
+//   text-align: left;
+//   padding:0px;
+// }
 
 
 .row-p {
-  width: 444px;
+  width: 321px;
+  // width: 376px;
+
   // letter-spacing: 0.1em;
   // word-spacing: 1em;
-
 }
 
 .row h2 {
   color: $dark-gray;
   font-weight: 300;
   font-size: 25px;
-  justify-content: center;
+  justify-content: left;
   margin-top: 30px;
+
 }
 
 .banner h3 {
@@ -45,15 +54,16 @@
   font-family:$body-font;
   font-weight: 300;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 16px;
 
 }
 
 .banner h2 {
-  font-size: 32px;
+  font-size: 43px;
   color: white;
   font-weight: 400;
   font-family:$body-font;
+  text-shadow: 0 0 16px #00000077;
 
 }
 
