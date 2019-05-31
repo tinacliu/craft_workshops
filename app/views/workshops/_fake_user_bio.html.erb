@@ -1,0 +1,10 @@
+<% potter_bio = "I'm a full-time studio potter originally from Portland, I like making functional pots, mainly with drawings of animals." %>
+<% leather_bio = "I am the owner of Barbered Leather and uses the space as my workshop. I specializes in making quality leather accessories including wallets and belts and takes custom orders for all types of leather goods." %>
+<% general_bio = "I have over 10 years of experience in this field, I always try to incorporate personal elements into the class to make it more fun!" %>
+<% if @workshop.category = 'Pottery' %>
+  <p><%= potter_bio %></p>
+<% elsif @workshop.category = 'Leather' %>
+  <p><%= leather_bio %></p>
+<% else %>
+  <p><%= general_bio %></p>
+<% end %>
