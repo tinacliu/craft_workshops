@@ -23,7 +23,11 @@
             <%= render 'workshops/map' %>
           </div>
           <div class="owner-card shadow-sm">
-            <%= cl_image_tag @workshop.owner.photo, crop: :fill, class: "avatar-medium shadow-sm border border-light mb-3" %>
+            <% if @workshop.owner.photo.present? %>
+              <%= cl_image_tag @workshop.owner.photo, crop: :fill, class: "avatar-medium shadow-sm border border-light mb-3" %>
+            <% else %>
+              <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png", class: "avatar-medium shadow-sm border border-light mb-3" %>
+            <% end %>
             <p class="gray bold border-bottom pb-2">
               <span class=""><%= "#{@workshop.owner.first_name} #{@workshop.owner.last_name}" %></span>
             </p>
