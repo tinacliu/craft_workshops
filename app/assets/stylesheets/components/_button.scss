@@ -1,10 +1,17 @@
 .btn-banner {
   color: white;
-  border-radius: 25px;
-  width: 25em;
+  // background-color: rgba(80, 190, 190, 0.7);
+  background-color: $duck-egg-blue;
+
+
+  // border-radius: 25px;
+  border-radius: 5px;
+  margin: 0px, 0px, 50px, 0px;
+  width: 13em;
   height: 3em;
   text-align: center;
   font-weight: 300;
+  border: none;
 }
 
 

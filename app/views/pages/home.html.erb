@@ -2,27 +2,32 @@
   <div class="flex-container">
 
     <div class="row">
-      <h2>I want to | <span class="underline blue">Make Ceramics</span></h2>
+      <h2><span class="thin">Pursue a | </span><span class="blue bold">New Passion</span></h2>
     </div>
 
     <div class="row row-mr">
 
       <%= link_to workshops_path do %>
-      <input class="btn-banner" type="search", placeholder="   Find a workshop near you">
+      <button type="button" class="btn-banner bold">Find a workshop</button>
+      <!-- <input class="btn-banner" type="search", placeholder="   Find a workshop near you"> -->
       <% end %>
     </div>
 
-    <div class="row row-mr">
-      <h3>With <span class="underline bold">Obbis</span> you can discover new skills to learn here in Japan</h3>
+
+    <div class="row row-p row-mr">
+      <h3>With <span class="blue bold">Obbis</span> you can discover new skills to learn here in <span class="blue bold">Japan</span></h3>
     </div>
 
   </div>
 </div>
 
 
+
+
+
 <div class="container">
  <div class="row flex-container row-mr ">
-    <h2> <span class="bold">Find you a new | </span><span class="underline blue bold"><%= link_to 'Hobby', workshops_path %></span></h2>
+    <h2> <span class="thin">Find you a new | </span><span class="underline blue bold"><%= link_to 'Hobby', workshops_path %></span></h2>
   </div>
 </div>
 

@@ -11,7 +11,7 @@
   background-size: cover;
   background-position: center;
 
-  padding: 110px 0;
+  padding: 110px 100px;
   height: 500px;
   font-family: $body-font;
   justify-content: center;
@@ -19,7 +19,16 @@
 }
 
 .row-mr {
-  margin: 18px
+  margin: 18px;
+  text-align: left;
+
+}
+
+
+.row-p {
+  width: 444px;
+  // letter-spacing: 0.1em;
+  // word-spacing: 1em;
 
 }
 
