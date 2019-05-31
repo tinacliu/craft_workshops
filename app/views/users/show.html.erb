@@ -2,9 +2,6 @@
 
 <div class="container-profile mx-auto">
   <div class="col-xs-6 col-md-3">
-
-
-
     <%= render 'users/profile_card' %>
   </div>
 
@@ -55,8 +52,10 @@
 
     <h5 class="text-muted mt-5 pl-2 pb-2 underline m_font">Past Classes </h5>
     <div class="profile-right-grid">
-      <% if @user.workshops_as_student.where("date_time<?", Date.today).size == 0 %>
+      <% if @user.workshops.where("date_time<?", Date.today).size == 0 %>
       <div class="card-workshop-sm-gray border text-muted mb-3">None found</div>
+      <% else %>
+        <%= render 'users/workshop_owner_past' %>
       <% end %>
     </div>
 
