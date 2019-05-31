@@ -5,13 +5,14 @@
     <div class="card-product-infos">
       <h5><%= workshop_own.name %></h5>
 
-        <% num_attendees = 0 %>
-        <% workshop_own.bookings.each do |booking| %>
-          <% num_attendees += booking.num_guests %>
-          <p> - <%= "#{booking.user.first_name} #{booking.user.last_name} | #{booking.num_guests} guest | #{booking.user.bio}" %></p>
-          <% end %>
-        <p>Total Bookings: <%= num_attendees%> | Spaces Remaining: <%= workshop_own.capacity - num_attendees %></p>
-      <% end %>
+      <% num_attendees = 0 %>
+      <% workshop_own.bookings.each do |booking| %>
+        <% num_attendees += booking.num_guests %>
+        <p> - <%= "#{booking.user.first_name} #{booking.user.last_name} | #{booking.num_guests} guest | #{booking.user.bio}" %></p>
+        <% end %>
+      <p>Total Bookings: <%= num_attendees%> | Spaces Remaining: <%= workshop_own.capacity - num_attendees %></p>
+      <%= render 'users/edit_link', workshop: workshop_own %>
+    <% end %>
 
     </div>
   </div>
